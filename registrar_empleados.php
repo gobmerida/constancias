@@ -6,6 +6,7 @@
 </head>
 <?php
 include("connect/conexion.php");
+require 'Classes/PHPMailer/PHPMailerAutoload.php';
 ?>
 <body>
 	<center>
@@ -78,7 +79,7 @@ include("connect/conexion.php");
 			$sql="INSERT INTO usuarios_new VALUES(NULL, '".$_POST["cedula"]."', '".md5($_POST["clave"])."', '".$_POST["correo"]."', 'general','".fecha()."')";
 			$rs=mysql_query($sql) or die (mysql_error());
 
-		require 'Classes/PHPMailer/PHPMailerAutoload.php';
+		
 		//Create a new PHPMailer instance
 		$mail = new PHPMailer;
 		//Tell PHPMailer to use SMTP
