@@ -1,0 +1,95 @@
+/*
+Edgar Carrizalez
+C.I. V-19.352.988
+Correo: edg.sistemas@gmail.com
+*/
+body{
+background-color:Gainsboro;
+}
+
+#principal_content{
+background-color:White;
+width:640px;
+height:320px;
+margin: 0 auto;
+border-radius:7px;
+border:solid 1px maroon;
+}
+
+#encabezado{
+background-color:maroon;
+border-radius:5px;
+width:100%;
+color:white;
+margin:-20px 0 0 0;
+}
+
+#panel{
+padding:20px;
+margin:-20px 0 0 0;
+float:left;
+width:160px;
+height:210px;
+border-right:solid 1px maroon;
+box-shadow:3px 0 3px 0 maroon;
+}
+#content{
+padding:20px;
+margin:-20px 0 0 0;
+float:left;
+width:388px;
+height:210px;
+overflow:auto;
+}
+#pie{
+width:100%;
+height:29px;
+clear:both;
+text-align:center;
+border-top:solid 1px maroon;
+}
+hr{
+color:maroon;
+}
+ul.panel{
+list-style: none;
+margin-left:3px;
+padding-left: 1em;
+text-indent: 0em;
+}
+ul.panel li:before{
+content: "\00BB \0020";
+}
+ul.panel li:hover{
+background-color:maroon;
+color:white;
+border-radius:7px;
+}
+ul.panel a:hover{
+color:white;
+}
+ul.panel a{
+cursor:default;
+}
+a{
+text-decoration:none;
+color:black;
+/*
+color:DimGray;
+*/
+}
+input.busc{
+border:ridge 1px maroon;
+border-radius:7px;
+}
+ul.panel li{
+border-radius:7px;
+}
+#suggestions{
+font-size:11px;
+}
+#suggestions a:hover{
+background-color:Gainsboro;
+border-radius:8px;
+text-decoration:underline;
+}

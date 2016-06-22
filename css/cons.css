@@ -1,0 +1,38 @@
+/*
+Edgar Carrizalez
+C.I. V-19.352.988
+Correo: edg.sistemas@gmail.com
+*/
+body{
+font-size:15px;
+font-family:"Times New Roman", Georgia, Serif;
+}
+#constancia{
+margin:0 auto;
+width:640px;
+}
+p.cons{
+text-align:justify;
+}
+.peque{
+font-size:10px;
+}
+.peq{
+font-size:11px;
+}
+.mas{
+font-size:20px;
+}
+@media print {
+#panel{display:none;}
+}
+#panel{
+position:fixed;
+margin:200px 0 0 0;
+border:solid 1px red;
+border-radius:8px;
+box-shadow: 5px 10px 15px maroon;
+/*
+background-color:Silver;
+*/
+}
