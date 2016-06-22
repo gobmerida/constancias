@@ -103,19 +103,19 @@ require 'Classes/PHPMailer/PHPMailerAutoload.php';
 		//Whether to use SMTP authentication
 		$mail->SMTPAuth = true;
 		//Username to use for SMTP authentication - use full email address for gmail
-		$mail->Username = "ale.ran92@gmail.com";
+		$mail->Username = "dinformatica.rrhh@gmail.com";
 		//Password to use for SMTP authentication
-		$mail->Password = "al1022_36";
+		$mail->Password = "infor2014";
 		//Set who the message is to be sent from
-		$mail->setFrom('ale.ran92@gmail.com', 'Alejandro Rangel');
+		$mail->setFrom('dinformarica.rrhh@gmail.com', 'Departamento de Informatica de la D.E.P.P.  de Recursos Humanos del Estado Mérida');
 		//Set an alternative reply-to address
-		$mail->addReplyTo('ale.ran92@gmail.com', 'Alejandro Rangel');
+		$mail->addReplyTo('dinformarica.rrhh@gmail.com', 'Departamento de Informatica de la D.E.P.P.  de Recursos Humanos del Estado Mérida');
 		//Set who the message is to be sent to
 		$mail->addAddress($_POST["correo"], $row["e_nomap"]);
 		//Set the subject line
-		$mail->Subject = 'cuenta';
+		$mail->Subject = 'Cuenta creada sistema de constancias';
 		//Read an HTML message body from an external file, convert referenced images to embedded,
-		$mail->Body    = 'hola otra vez';
+		$mail->Body    = 'Se ha registrado exitosamente en el sistema de generacion de constancias, su contraseña es: '.$_POST["clave"]. ' Por favor no responda este correo ya q es generado automaticamente por el sistema';
 		$mail->AltBody = 'probandosss';
 		//Attach an image file
 		//send the message, check for errors
