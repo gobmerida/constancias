@@ -19,6 +19,15 @@ include("./connect/conexion.php");
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="generator" content="Geany 1.23.1" />
 	<link rel="stylesheet" href="./css/cons.css" type="text/css"/>
+	<link rel="stylesheet" href="css/imprimir.css" type="text/css"/ media="print">
+	<style>
+		.sello {
+	position: absolute;
+
+	z-index: -1;
+
+	}
+	</style>
 </head>
 
 <body>
@@ -86,12 +95,13 @@ include("./connect/conexion.php");
 			echo "<br><br><br><br>";
 		}
 		echo "</p>
-		<br>
 		<center>Fecha de ingreso: <b>$fecha_de</b></center>
 		<p class='cons'>Constancia que se expide a solicitud de parte interesada para <b>FINES PERSONALES,</b> en la ciudad de Mérida a los <b>$dia_hoy_lt ($dia_hoy)</b>
 		días del mes de <b>$mes_hoy_lt</b> de <b>$y.</b></p>
-		<br><br><br><br><br>
-		<p align='center'><b>LCDO. MIGUEL ANGEL RINCON FIGUEROA<br>DIRECTOR ESTADAL DEL PODER POPULAR<br>DE RECURSOS HUMANOS DE LA GOBERNACIÓN DEL ESTADO MÉRIDA<br>
+		
+			<img src='img/sello1.png' alt='sello'/ class='sello'>
+		<br><br><br><br><br><br><br><br>
+		<p align='center'><b><br>LCDO. MIGUEL ANGEL RINCON FIGUEROA<br>DIRECTOR ESTADAL DEL PODER POPULAR<br>DE RECURSOS HUMANOS DE LA GOBERNACIÓN DEL ESTADO MÉRIDA<br>
 		Designado según decreto Nº 400-1 de fecha 11/10/2013<br>Gaceta Extraordinaria de la misma fecha</b></p>
 		<p><span class='peq'>EMP/&nbsp;&nbsp;&nbsp;/</span>
 		<center><i><b>\"Independencia, Patria Socialista... Viviremos y Venceremos\"</b></i></center>
