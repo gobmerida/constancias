@@ -83,15 +83,7 @@
 			$(".jubilados").click(function(){
 				$("#main").load("login_jubilados.php");
 			});
-			$(".funciones").click(function(){
-				$("#main").load("funciones.html");
-			});
-			$(".myv").click(function(){
-				$("#main").load("myv.html");
-			});
-			$(".objetivos").click(function(){
-				$("#main").load("objetivos.html");
-			});
+			
 		});
 			
 	</script>
