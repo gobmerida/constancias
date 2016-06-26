@@ -188,7 +188,7 @@ $mante=0;
 	<div id="content"><!-- Inicio del contenido del módulo -->
 		<div id="bienvenido"><br><br><br><h3 align="center">Bienvenidos al módulo generador de constancias</h3></div>
 		<div id="empleado">
-			<form action="constancia.php" method="get">
+			<form action="constancia1.php" method="get">
 			Cédula del empleado<br><input type="text" name="cedula_emp" id="cedula_emp" class="busc" autocomplete=off onkeypress="return justNumbers(event);"><br>
 			Cesta ticket <input type="checkbox" name="ct_emp" id="ct_emp" value="1"><br>
 			<input type="submit" value="Generar" class="busc">
