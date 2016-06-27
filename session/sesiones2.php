@@ -20,7 +20,7 @@
 			$_SESSION['cedula']=$row['cedula'];
 			$_SESSION['pass']=$pass;
 			$_SESSION['tipo']=$row['tipo'];
-			header("location: ../hola.php");
+			header("location: ../inicio_empleados.php");
 		}
 	else echo "<script>alert('Clave Invalida');window.location='../index2.php';</script>";	
 	

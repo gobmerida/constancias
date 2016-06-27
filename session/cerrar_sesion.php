@@ -1,9 +1,3 @@
-<!--Autor 
-Edgar Carrizalez
-C.I. V-19.3522.988
-Correo: edg.sistemas@gmail.com
--->
-
 <?php
 session_start();
 $_SESSION = array();
@@ -15,5 +9,5 @@ if (ini_get("session.use_cookies"))
 	$params["path"], $params["domain"],
 	$params["secure"], $params["httponly"]);
 }
-header("location: ../");
+header("location: ../index2.php");
 ?>
