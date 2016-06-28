@@ -26,7 +26,7 @@
 		    <!-- Collect the nav links, forms, and other content for toggling -->
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<ul class="nav navbar-nav">
-			        <li class="active inicio"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
+			        <li class="active"><a href="inicio_empleados.php">Inicio <span class="sr-only">(current)</span></a></li>
 			        <li><a href="#" class="empleados">Generar Constancia</a></li>
 			        <li><a href="#" class="obreros">Ultima constancia generada</a></li>
 			        <li><a href="#" class="jubilados">Recibos de Pago</a></li>
@@ -39,14 +39,16 @@
 			</div>
 		
 	</header>
+
 	<div class="container">
 			<div id="main" class="table-responsive">
-				<h4 style="display: inline-block">Bienvenido(a): Nombre </h4> <a class='btn btn-warning' href="session/cerrar_sesion.php">Cerrar Cesión</a>
+				<h4 style="display: inline-block">Bienvenido(a): Nombre </h4> <a href="session/cerrar_sesion.php">Cerrar Sesión</a>
 				<table class="table table-striped table-condensed">
 				  <thead>
 				  		<th>Cédula</th>
 				  		
 				  		<th>Cargo</th>
+				  		<th>Dependencia</th>
 				  		<th>Correo</th>
 				  		<th>Tipo</th>
 				  		<th>Fecha de Registro</th>
@@ -57,6 +59,7 @@
 					  	<td>cedula</td>
 					  	
 					  	<td>car</td>
+					  	<td>depe</td>
 					  	<td>corr</td>
 					  	<td>Empleado</td>
 					  	<td>fecha</td>
@@ -66,7 +69,10 @@
 			</div>
 	</div>
 		<center>
-		</center><br><br>
+		</center>
+		<center>
+			<a class='btn btn-info' href="constancia1.php">Cambiar Clave</a> <br><br>
+		</center>
 		<div class="container-fluid">
 			<div class="col-md-6">
 				<center>
@@ -108,9 +114,6 @@
 	<script src="js/magicslideshow.js"></script>
 	<script>
 		$(function(){
-			$(".inicio").click(function(){
-				$("#main").load("inicio.php");
-			});
 
 			$(".empleados").click(function(){
 				$("#main").load("login_empleados.php");

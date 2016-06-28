@@ -1,6 +1,4 @@
 <?php
-	include("./connect/conexion.php");
-
 
 do {
 		$caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"; //posibles caracteres a usar
@@ -22,9 +20,4 @@ do {
 
 } while ($cadena=="");
 
-echo $cadena;
-
-
-
-	
 ?>

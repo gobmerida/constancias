@@ -30,16 +30,7 @@
 			        <li><a href="#" class="empleados">Empleados</a></li>
 			        <li><a href="#" class="obreros">Obreros</a></li>
 			        <li><a href="#" class="jubilados">Jubilados</a></li>
-			        <li class="dropdown">
-				        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Verificar Constancia<span class="caret"></span></a>
-				        <ul class="dropdown-menu">
-				           	<li><a href="#">Empleados</a></li>
-				            <li role="separator" class="divider"></li>
-				            <li><a href="#">Obreros</a></li>
-				            <li role="separator" class="divider"></li>
-				            <li><a href="#">Jubilados o Pensionados</a></li>
-				        </ul>
-			        </li>
+			        <li><a href="#" class="jubilados">Verificar Constancia</a></li>
 			        <li><a href="#">Ayuda</a></li>
 		        </ul>
 		    </div><!-- /.navbar-collapse -->

@@ -25,7 +25,7 @@
 		if ($num_datos !== 1) echo "<script>alert('Cedula no se encuentra en la base de datos de empleados');window.location='index2.php';</script>";
 		$row_datos= mysql_fetch_array($rs_datos);
 		if ($row_datos["cuenta"] === $_POST["cuenta"]) {
-			$sql="INSERT INTO usuarios_new VALUES(NULL, '".$_POST["cedula"]."', '".md5($_POST["clave"])."', '".$_POST["correo"]."', 'general','".fecha()."')";
+			$sql="INSERT INTO usuarios_new VALUES(NULL, '".$_POST["cedula"]."', '".md5($_POST["clave"])."', '".$_POST["correo"]."', 'empleado','".fecha()."')";
 			$rs=mysql_query($sql) or die (mysql_error());
 			include("enviar_correo.php");
 	

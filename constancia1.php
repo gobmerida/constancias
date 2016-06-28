@@ -1,10 +1,12 @@
 <?php
 	include("session/sesion2.php");
+	include("./script_php/fecha.php");
 	include("./script_php/conver.php");
 	include("./script_php/script_fecha.php");
 	include("./script_php/a_fe.php");
 	include("./script_php/condicion.php");
 	include("./connect/conexion.php");
+	include("codigo_verificacion.php");
 	require_once 'Classes/dompdf/autoload.inc.php';
 	use Dompdf\Dompdf;
 
@@ -17,7 +19,8 @@
 		$emp_query = mysql_query($emp_sql,$con) or die (mysql_error());
 		$emp_row = mysql_fetch_array($emp_query);
 		
-		//~ if()
+		$sql="INSERT INTO verificar_empleados VALUES (null, '".$emp_row['e_codigo']."', '".$emp_row['e_cedula']."', '".$emp_row['e_nomap']."', '".$emp_row['e_cargo']."', '".$emp_row['e_fechaing']."', '".$emp_row['e_actividad']."', '".$emp_row['e_sueldo']."', '".fecha1()."', '".$cadena."')";
+		$rs=mysql_query($sql) or die (mysql_error());
 		
 		$dia_hoy = date("d");
 		$dia_hoy_lt = numtoletras($dia_hoy);
@@ -111,7 +114,7 @@
 				
 					<p align='center' class='director'><b><br>LCDO. MIGUEL ANGEL RINCON FIGUEROA<br>DIRECTOR ESTADAL DEL PODER POPULAR<br>DE RECURSOS HUMANOS DE LA GOBERNACIÓN DEL ESTADO MÉRIDA<br>
 					Designado según decreto Nº 400-1 de fecha 11/10/2013<br>Gaceta Extraordinaria de la misma fecha</b></p>
-					<p><span class='peq'>Esta constancia ha sido impresa electrónicamente, los datos reflejados están sujetos a confirmación a través de: http://rrhh.merida.gob.ve, en el módulo de Verificación de Constancias, introduciendo el siguiente código de verificación: AKJB2ZXSCD.</span>
+					<p><span class='peq'>Esta constancia ha sido impresa electrónicamente, los datos reflejados están sujetos a confirmación a través de: http://rrhh.merida.gob.ve, en el módulo de Verificación de Constancias, introduciendo el siguiente código de verificación: <b>$cadena</b></span>
 					<p><span class='peq'>EMP/&nbsp;&nbsp;&nbsp;/</span>
 					<center><i><b>\"Independencia, Patria Socialista... Viviremos y Venceremos\"</b></i></center>
 					<center><span class='peque'>Calle 23 entre Av, 3 y 4 frente a la Plaza Bolívar, Palacio de Gobierno, Planta Baja, Dirección de Recursos Humanos de la Gobernación del
