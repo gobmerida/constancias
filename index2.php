@@ -30,7 +30,7 @@
 			        <li><a href="#" class="empleados">Empleados</a></li>
 			        <li><a href="#" class="obreros">Obreros</a></li>
 			        <li><a href="#" class="jubilados">Jubilados</a></li>
-			        <li><a href="#" class="jubilados">Verificar Constancia</a></li>
+			        <li><a href="#" class="verificar">Verificar Constancia</a></li>
 			        <li><a href="#">Ayuda</a></li>
 		        </ul>
 		    </div><!-- /.navbar-collapse -->
@@ -73,6 +73,9 @@
 			});
 			$(".jubilados").click(function(){
 				$("#main").load("login_jubilados.php");
+			});
+			$(".verificar").click(function(){
+				$("#main").load("verificar.php");
 			});
 			
 		});

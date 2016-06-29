@@ -81,10 +81,18 @@
 						<div class="panel panel-default">
 							  		<div class="panel-heading">Constancias</div>
 							  			<div class="panel-body">
-							  			<a class='btn btn-success' href="">Ultima constancia Generada</a> Fecha:<br><br>
-							    			<a class='btn btn-primary' href="constancia1.php">Generar Constancia de Trabajo</a>
-							    			
+								  			<a class='btn btn-success' href="">Ultima constancia Generada</a> Fecha:<br><br>
+								  			<form action="constancia1.php" method="POST">
+								    			<button class='btn btn-primary' id="boton">Generar Constancia de Trabajo</button>
+								    			<div class="checkbox" style="display: inline-block;">
+												    <label>
+												      <input type="checkbox" name="cesta" id="cesta" value="1"> Incluir Bono Alimentación
+												    </label>
+										  		</div>
+										  	</form>
 							  			</div>
+
+										
 						</div>
 					</div>
 								</div>
@@ -124,7 +132,8 @@
 			$(".jubilados").click(function(){
 				$("#main").load("login_jubilados.php");
 			});
-			
+
+
 		});
 			
 	</script>

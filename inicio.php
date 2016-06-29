@@ -20,7 +20,7 @@
 				</div>
 				<div class="col-md-6">
 				<br><br><br><br><br><br><br><br>
-					<button type="button" class="btn btn-info btn-lg btn-block obreros">Verificar Constancia</button>
+					<button type="button" class="btn btn-info btn-lg btn-block verificar">Verificar Constancia</button>
 				</div>
 			<script>
 				$(function(){
@@ -33,6 +33,9 @@
 					});
 					$(".jubilados").click(function(){
 						$("#main").load("login_jubilados.php");
+					});
+					$(".verificar").click(function(){
+						$("#main").load("verificar.php");
 					});
 				});
 			</script>

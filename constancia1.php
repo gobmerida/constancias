@@ -12,14 +12,21 @@
 
 
 
-
 		
 		$ced=$_SESSION['cedula'];
 		$emp_sql = "SELECT * FROM t_empleados WHERE e_cedula='$ced'";
 		$emp_query = mysql_query($emp_sql,$con) or die (mysql_error());
 		$emp_row = mysql_fetch_array($emp_query);
+
+		if (isset($_POST["cesta"])) {
+
+			$cesta = 1;
+		}
+		else {
+			$cesta = 0;
+		}
 		
-		$sql="INSERT INTO verificar_empleados VALUES (null, '".$emp_row['e_codigo']."', '".$emp_row['e_cedula']."', '".$emp_row['e_nomap']."', '".$emp_row['e_cargo']."', '".$emp_row['e_fechaing']."', '".$emp_row['e_actividad']."', '".$emp_row['e_sueldo']."', '".fecha1()."', '".$cadena."')";
+		$sql="INSERT INTO verificar_empleados VALUES (null, '".$emp_row['e_codigo']."', '".$emp_row['e_cedula']."', '".$emp_row['e_nomap']."', '".$emp_row['e_cargo']."', '".$emp_row['e_fechaing']."', '".$emp_row['e_actividad']."', '".$emp_row['e_sueldo']."', '".$cesta."', '".fecha1()."', '".$cadena."')";
 		$rs=mysql_query($sql) or die (mysql_error());
 		
 		$dia_hoy = date("d");
