@@ -2,7 +2,7 @@
 
 do {
 		$caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"; //posibles caracteres a usar
-		$numerodeletras=7; //numero de letras para generar el texto
+		$numerodeletras=9; //numero de letras para generar el texto
 		$cadena = ""; //variable para almacenar la cadena generada
 
 		for($i=0;$i<$numerodeletras;$i++)
