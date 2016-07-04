@@ -25,7 +25,7 @@
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-8">
         <button type="submit" class="btn btn-success">Ingresar</button>
-    <a  class="btn btn-warning">¿Olvido su Contraseña?</a>
+    <a  class="btn btn-warning olvido">¿Olvido su Contraseña?</a>
       </div>
     </div>
     
@@ -40,6 +40,9 @@
         $("#main").load("registrar_jubilados.php");
       });
       
+      $(".olvido").click(function(){
+        $("#main").load("recuperar_emp.php");
+      });
     });
 </script>
 

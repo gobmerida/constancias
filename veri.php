@@ -3,7 +3,7 @@
 	$sql="SELECT * FROM verificar_empleados WHERE verificar='".$_POST["verificar"]."'";
 	$rs= mysql_query($sql) or die(mysql_error());
 	$num= mysql_num_rows($rs);
-	if ($num !== 1) echo "<script>alert('Codigo Invalido');window.location='index2.php';</script>";
+	if ($num !== 1) echo "<script>alert('Codigo Invalido');window.location='index.php';</script>";
 	$row= mysql_fetch_array($rs);
 	$sql1="SELECT * FROM c_actividades WHERE id_actividad='".$row["actividad"]."'";
 	$rs1= mysql_query($sql1) or die(mysql_error());
@@ -56,7 +56,7 @@
 						  </tbody>
 						</table>
 					</div>
-					<a class="btn btn-info" href="index2.php">Salir</a>
+					<a class="btn btn-info" href="index.php">Salir</a>
 			</div>';
 		if ($row["cesta"]== 1) {
 
@@ -99,7 +99,7 @@
 						  </tbody>
 						</table>
 					</div>
-					<a class="btn btn-info" href="index2.php">Salir</a>
+					<a class="btn btn-info" href="index.php">Salir</a>
 			</div>';
 	}
 ?>
