@@ -88,6 +88,10 @@
 							  	<td>'.$row["cargo"].'</td>
 						  	</tr>
 						  	<tr>
+							  	<td>Tipo de Nomina:</td> 	
+							  	<td>'.$row["actividad"].'</td>
+						  	</tr>
+						  	<tr>
 							  	<td>Sueldo:</td> 	
 							  	<td>'.$row["sueldo"].'</td>
 						  	</tr>

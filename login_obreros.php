@@ -6,7 +6,7 @@
 <center>
 	<h3>Sistema - Obreros</h3>
 </center>
-<form class="form-horizontal" method="POST" action="session/sesiones2.php">
+<form class="form-horizontal" method="POST" action="session/sesiones3.php">
   <div class="form-group">
     <label for="cedula" class="col-sm-2 control-label">Cédula:</label>
     <div class="col-sm-8">
