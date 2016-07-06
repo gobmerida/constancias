@@ -1,5 +1,8 @@
 <?php
 	include("connect/conexion.php");
+	include("script_php/condicion.php");
+	include("script_php/conver.php");
+	include("script_php/a_fe.php");
 	$sql="SELECT * FROM verificar_empleados WHERE verificar='".$_POST["verificar"]."'";
 	$rs= mysql_query($sql) or die(mysql_error());
 	$num= mysql_num_rows($rs);
@@ -13,7 +16,15 @@
 	$rs2= mysql_query($sql2) or die(mysql_error());
 	$row2= mysql_fetch_array($rs2);
 
-	
+	$fijo_contratado=tipo_n($row['codigo']);
+
+	$sueldo_integral=$row["sueldo"];
+	list($suel,$deci) = explode(".",$sueldo_integral);
+	$sueldo_integral_let=numtoletras($sueldo_integral);
+	$sueldo_integral_let_dec=numtoletras($deci);
+	$sueldo_integral=number_format($sueldo_integral,2,",", ".");
+
+	$fecha_de = a_fecha($row["fechaing"]);
 
 	echo 'Detalles del Código de Verificación: '.$row["verificar"].''. '<br>';
 	echo 'Fecha de generacion de constancia: '.$row["fecha_constancia"].'';
@@ -38,11 +49,11 @@
 						  	</tr>
 						  	<tr>
 							  	<td>Cargo:</td> 	
-							  	<td>'.$row["cargo"].'</td>
+							  	<td>'.$row["cargo"].' ('.$fijo_contratado.')</td>
 						  	</tr>
 						  	<tr>
 							  	<td>Fecha de Ingreso:</td> 	
-							  	<td>'.$row["fechaing"].'</td>
+							  	<td>'.$fecha_de.'</td>
 						  	</tr>
 						  	<tr>
 							  	<td>Dependencia:</td> 	
@@ -50,7 +61,7 @@
 						  	</tr>
 						  	<tr>
 							  	<td>Sueldo:</td> 	
-							  	<td>'.$row["sueldo"].'</td>
+							  	<td>'.$sueldo_integral.'</td>
 						  	</tr>
 		
 						  </tbody>
@@ -60,7 +71,7 @@
 			</div>';
 		if ($row["cesta"]== 1) {
 
-		echo "<br>Adicional percibe un monto mensual de <b>TRECE MIL DOSCIENTOS SETENTA Y CINCO BOLIVARES CON CERO CÉNTIMOS (Bs. 13.275.00),</b> por concepto de Bono
+		echo "<br>Adicional percibe un monto mensual de <b> Bs. 13.275.00</b> por concepto de Bono
 			de Alimentación, de conformidad con lo establecido en el Artículo 5 de la Ley de Alimentación Para los Trabajadores, el cual es acreditado mediante
 			tarjeta electrónica o ticket alimentación.";
 		}
