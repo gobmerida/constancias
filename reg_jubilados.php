@@ -31,7 +31,7 @@
 	
 		}
 
-		else echo "<script>alert('datos de cuenta no validos');window.location='index2.php';</script>";
+		else echo "<script>alert('datos de cuenta no validos');window.location='index.php';</script>";
 
 
 	}

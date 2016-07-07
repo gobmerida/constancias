@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-07-2016 a las 12:54:44
+-- Tiempo de generación: 07-07-2016 a las 10:32:17
 -- Versión del servidor: 5.5.49-0+deb8u1
 -- Versión de PHP: 5.6.20-0+deb8u1
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de datos: `constancias`
+-- Base de datos: `constancias_online`
 --
 
 -- --------------------------------------------------------
@@ -13903,15 +13903,15 @@ CREATE TABLE IF NOT EXISTS `usuarios_new` (
   `correo` varchar(80) COLLATE utf8_spanish_ci NOT NULL,
   `tipo` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `fecha_registro` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios_new`
 --
 
 INSERT INTO `usuarios_new` (`id`, `cedula`, `clave`, `correo`, `tipo`, `fecha_registro`) VALUES
-(28, '21182164', 'e10adc3949ba59abbe56e057f20f883e', 'ale.ran92@gmail.com', 'empleado', '2016-06-23'),
-(70, '12345678', '123456', '123456', 'ompleado', '2016-06-07');
+(70, '12345678', '123456', '123456', 'ompleado', '2016-06-07'),
+(71, '21182164', 'e10adc3949ba59abbe56e057f20f883e', 'ale.ran92@gmail.com', 'empleado', '2016-07-07');
 
 -- --------------------------------------------------------
 
@@ -13932,16 +13932,6 @@ CREATE TABLE IF NOT EXISTS `verificar_empleados` (
   `fecha_constancia` date NOT NULL,
   `verificar` varchar(30) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
---
--- Volcado de datos para la tabla `verificar_empleados`
---
-
-INSERT INTO `verificar_empleados` (`id`, `codigo`, `cedula`, `nomap`, `cargo`, `fechaing`, `actividad`, `sueldo`, `cesta`, `fecha_constancia`, `verificar`) VALUES
-(1, 'CO-0067', '21182164', 'RANGEL SEGOVIA, ALEJANDRO JOSE', 'PROGRAMADOR (A)', '2016-05-02', '010853', 16005.00, '0', '2016-06-30', 'SKq03mJJo'),
-(2, 'CO-0067', '21182164', 'RANGEL SEGOVIA, ALEJANDRO JOSE', 'PROGRAMADOR (A)', '2016-05-02', '010853', 16005.00, '0', '2016-07-01', 'Bgk8IiofW'),
-(3, 'CO-0067', '21182164', 'RANGEL SEGOVIA, ALEJANDRO JOSE', 'PROGRAMADOR (A)', '2016-05-02', '010853', 16005.00, '0', '2016-07-04', 'hOz9PkQ22'),
-(4, 'CO-0067', '21182164', 'RANGEL SEGOVIA, ALEJANDRO JOSE', 'PROGRAMADOR (A)', '2016-05-02', '010853', 16005.00, '1', '2016-07-04', 'sf7mF4FgV');
 
 -- --------------------------------------------------------
 
@@ -14042,7 +14032,7 @@ MODIFY `obr_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1970;
 -- AUTO_INCREMENT de la tabla `usuarios_new`
 --
 ALTER TABLE `usuarios_new`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=71;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
 --
 -- AUTO_INCREMENT de la tabla `verificar_empleados`
 --

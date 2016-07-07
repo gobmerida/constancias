@@ -42,7 +42,7 @@
 		if (!$mail->send()) {
 		    echo "<script>alert('Se ha registrado satisfactoriamente, pero ha ocurrido un error y no se le enviara por correo la informacion de registro en el sistema;</script>". ": " . $mail->ErrorInfo;
 		} else {
-		    echo "<script>alert('Se ha registrado satisfactoriamente, se le ha enviado un correo con los datos para acceder al sistema');window.location='index2.php';</script>";
+		    echo "<script>alert('Se ha registrado satisfactoriamente, se le ha enviado un correo con los datos para acceder al sistema');window.location='index.php';</script>";
 		}
 
 ?>

@@ -25,9 +25,10 @@
 	$sueldo_integral=number_format($sueldo_integral,2,",", ".");
 
 	$fecha_de = a_fecha($row["fechaing"]);
+	$fecha_c = a_fecha($row["fecha_constancia"]);
 
 	echo 'Detalles del Código de Verificación: '.$row["verificar"].''. '<br>';
-	echo 'Fecha de generacion de constancia: '.$row["fecha_constancia"].'';
+	echo 'Fecha de generacion de constancia: '.$fecha_c.'';
 
 	if ($row2["tipo"] == 'empleado' || $row2["tipo"] == 'obrero'){
 		echo '<div class="container">
@@ -70,7 +71,7 @@
 					<a class="btn btn-info" href="index.php">Salir</a>
 			</div>';
 		if ($row["cesta"]== 1) {
-
+			
 		echo "<br>Adicional percibe un monto mensual de <b> Bs. 13.275.00</b> por concepto de Bono
 			de Alimentación, de conformidad con lo establecido en el Artículo 5 de la Ley de Alimentación Para los Trabajadores, el cual es acreditado mediante
 			tarjeta electrónica o ticket alimentación.";
