@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<style>
+	.verifi {
+		background: #FFF;
+	}
+	p {
+		padding: 10px 90px;
+	}
+</style>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Sistemas de Constancias y Recibos de Pagos</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+	
+	<header>
+			<div class="jumbotron">
+			<img src="img/header4.jpg" class="img-responsive" alt="">
+			</div>
+	</header>
 <?php
 	include("connect/conexion.php");
 	include("script_php/condicion.php");
@@ -27,11 +51,11 @@
 	$fecha_de = a_fecha($row["fechaing"]);
 	$fecha_c = a_fecha($row["fecha_constancia"]);
 
-	echo 'Detalles del Código de Verificación: '.$row["verificar"].''. '<br>';
-	echo 'Fecha de generacion de constancia: '.$fecha_c.'';
+	echo '<div class="verifi"><p>Detalles del Código de Verificación: '.$row["verificar"].''. '<br>';
+	echo 'Fecha de generacion de constancia: '.$fecha_c.'.</p></div>';
 
 	if ($row2["tipo"] == 'empleado' || $row2["tipo"] == 'obrero'){
-		echo '<div class="container">
+		echo '<div class="verifi"><div class="container">
 					<div id="main" class="table-responsive">
 						
 						<table class="table table-striped table-condensed">
@@ -68,14 +92,15 @@
 						  </tbody>
 						</table>
 					</div>
-					<a class="btn btn-info" href="index.php">Salir</a>
-			</div>';
+				
+			</div></div>';
 		if ($row["cesta"]== 1) {
 			
-		echo "<br>Adicional percibe un monto mensual de <b> Bs. 13.275.00</b> por concepto de Bono
+		echo "<br><div class='verifi'><p>Adicional percibe un monto mensual de <b> Bs. 13.275.00</b> por concepto de Bono
 			de Alimentación, de conformidad con lo establecido en el Artículo 5 de la Ley de Alimentación Para los Trabajadores, el cual es acreditado mediante
-			tarjeta electrónica o ticket alimentación.";
+			tarjeta electrónica o ticket alimentación.</p></div>";
 		}
+			echo '<br><center><a class="btn btn-info" href="index.php">Salir</a></center>';
 	}
 	else {
 		echo '<div class="container">
@@ -115,3 +140,4 @@
 			</div>';
 	}
 ?>
+</body>
