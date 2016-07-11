@@ -19,7 +19,7 @@
 						<button type="button" class="btn btn-warning btn-lg btn-block jubilados">Jubilados <span class="hidden-xs">o Pensionados (EMP y OBR)</span></button>
 				</div>
 				<div class="col-md-6">
-				<br><br><br><br><br><br><br><br>
+				<br><br><br><br><br>
 					<button type="button" class="btn btn-info btn-lg btn-block verificar">Verificar Constancia</button>
 				</div>
 			<script>
