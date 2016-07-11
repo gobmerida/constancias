@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <style>
+	.jumbotron img {
+	margin-top: -50px;
+	}
 	.verifi {
 		background: #FFF;
 	}
@@ -86,7 +89,7 @@
 						  	</tr>
 						  	<tr>
 							  	<td>Sueldo:</td> 	
-							  	<td>'.$sueldo_integral.'</td>
+							  	<td><b>Bs. '.$sueldo_integral.'</b></td>
 						  	</tr>
 		
 						  </tbody>
@@ -96,11 +99,11 @@
 			</div></div>';
 		if ($row["cesta"]== 1) {
 			
-		echo "<br><div class='verifi'><p>Adicional percibe un monto mensual de <b> Bs. 13.275.00</b> por concepto de Bono
+		echo "<br><div class='verifi'><p>Adicional percibe un monto mensual de <b> Bs. 13.275,00</b> por concepto de Bono
 			de Alimentación, de conformidad con lo establecido en el Artículo 5 de la Ley de Alimentación Para los Trabajadores, el cual es acreditado mediante
 			tarjeta electrónica o ticket alimentación.</p></div>";
 		}
-			echo '<br><center><a class="btn btn-info" href="index.php">Salir</a></center>';
+			echo '<center><a class="btn btn-info" href="index.php">Salir</a></center>';
 	}
 	else {
 		echo '<div class="container">

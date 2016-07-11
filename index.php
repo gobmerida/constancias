@@ -31,7 +31,7 @@
 			        <li><a href="#" class="obreros">Obreros</a></li>
 			        <li><a href="#" class="jubilados">Jubilados</a></li>
 			        <li><a href="#" class="verificar">Verificar Constancia</a></li>
-			        <li><a href="#">Ayuda</a></li>
+			        <li><a href="#">Manual del sistema ¿?</a></li>
 		        </ul>
 		    </div><!-- /.navbar-collapse -->
   		</div><!-- /.container-fluid -->
@@ -61,6 +61,8 @@
 	<script src="js/magicslideshow.js"></script>
 	<script>
 		$(function(){
+			$("#main").load("inicio.php");
+			
 			$(".inicio").click(function(){
 				$("#main").load("inicio.php");
 			});
