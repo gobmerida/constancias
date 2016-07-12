@@ -38,15 +38,15 @@
 		//Password to use for SMTP authentication
 		$mail->Password = "infor2014";
 		//Set who the message is to be sent from
-		$mail->setFrom('dinformarica.rrhh@gmail.com', 'Departamento de Informatica de la D.E.P.P.  de Recursos Humanos del Estado Mérida');
+		$mail->setFrom('dinformarica.rrhh@gmail.com', 'Departamento de Informática de la D.E.P.P.  de Recursos Humanos del Estado Mérida');
 		//Set an alternative reply-to address
-		$mail->addReplyTo('dinformarica.rrhh@gmail.com', 'Departamento de Informatica de la D.E.P.P.  de Recursos Humanos del Estado Mérida');
+		$mail->addReplyTo('dinformarica.rrhh@gmail.com', 'Departamento de Informática de la D.E.P.P.  de Recursos Humanos del Estado Mérida');
 		//Set who the message is to be sent to
 		$mail->addAddress($_POST["correo"], 'usuario');
 		//Set the subject line
-		$mail->Subject = 'Recuprar Contraseña';
+		$mail->Subject = 'Recuperar Contraseña';
 		//Read an HTML message body from an external file, convert referenced images to embedded,
-		$mail->Body    = 'se ha recuperado la contraseña con exito su clave es: '.$cadena.' <br>Por favor no responda este correo ya que es generado automáticamente por el sistema';
+		$mail->Body    = 'se ha recuperado la contraseña con éxito su clave es: '.$cadena.' <br>Por favor no responda este correo ya que es generado automáticamente por el sistema';
 		$mail->AltBody = 'probandosss';
 		$mail->CharSet = 'UTF-8';
 		//Attach an image file

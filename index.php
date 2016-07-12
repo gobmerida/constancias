@@ -29,7 +29,7 @@
 			        <li class="active inicio"><a href="#">Inicio <span class="sr-only">(current)</span></a></li>
 			        <li><a href="#" class="empleados">Empleados</a></li>
 			        <li><a href="#" class="obreros">Obreros</a></li>
-			        <li><a href="#" class="jubilados">Jubilados</a></li>
+			        <li><a href="#" class="jubilados">Jubilados o Pensionados</a></li>
 			        <li><a href="#" class="verificar">Verificar Constancia</a></li>
 			        <li><a href="#">Manual del sistema ¿?</a></li>
 		        </ul>
@@ -52,7 +52,7 @@
 		<br>
 		<br>
 		<div class="container ">
-			<b> Sitio Web Desarrollo y Administrado por el Departamento de Informatica de la D.E.P.P. de Recursos Humanos del Estado Mérida.</b>
+			<b> Sitio Web Desarrollo y Administrado por el Departamento de Informática de la D.E.P.P. de Recursos Humanos del Estado Mérida.</b>
 		</div>
 		<br>
 	</footer>

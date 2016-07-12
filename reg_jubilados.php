@@ -22,7 +22,7 @@
 		$sql_datos="SELECT jp_cedula, cuenta FROM c_jp WHERE jp_cedula='".$_POST["cedula"]."'";
 		$rs_datos=mysql_query($sql_datos)or die(mysql_error());
 		$num_datos=mysql_num_rows($rs_datos);
-		if ($num_datos !== 1) echo "<script>alert('Cedula no se encuentra en la base de datos de empleados');window.location='index2.php';</script>";
+		if ($num_datos !== 1) echo "<script>alert('Cédula no se encuentra en la base de datos de empleados');window.location='index2.php';</script>";
 		$row_datos= mysql_fetch_array($rs_datos);
 		if ($row_datos["cuenta"] === $_POST["cuenta"]) {
 			$sql="INSERT INTO usuarios_new VALUES(NULL, '".$_POST["cedula"]."', '".md5($_POST["clave"])."', '".$_POST["correo"]."', 'jp','".fecha()."')";
@@ -31,7 +31,7 @@
 	
 		}
 
-		else echo "<script>alert('datos de cuenta no validos');window.location='index.php';</script>";
+		else echo "<script>alert('datos de cuenta nomina no validos');window.location='index.php';</script>";
 
 
 	}

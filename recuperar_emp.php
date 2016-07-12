@@ -6,7 +6,7 @@
 </head>
 <body>
 	<center>
-		<h3 class="n">Recupear Contraseña</h3><br>
+		<h3 class="n">Recuperar Contraseña</h3><br>
 		<br>
 		<form class="form-horizontal" name="formulario" action="recu_emp.php" method="POST">
 			<div class="form-group">
@@ -62,7 +62,7 @@
 			
 			largopass = formulario.usuario_user.value.length;
         	 if(largopass < 5){
-                  alert("El usuario debe ser al menos de 5 caracteres.");
+                  alert("La contraseña debe ser al menos de 5 caracteres.");
                   formulario.usuario_user.focus();
                   e.preventDefault()
          	}

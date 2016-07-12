@@ -29,7 +29,7 @@
 			
 				}
 
-				else echo "<script>alert('datos de cuenta o correo no validos');window.location='index2.php';</script>";
+				else echo "<script>alert('datos de cuenta nomina o correo no validos');window.location='index2.php';</script>";
 			}
 
 			else if ($_SESSION["tipo"]=="obrero") {
@@ -51,7 +51,7 @@
 			
 				}
 
-				else echo "<script>alert('datos de cuenta o correo no validos');window.location='index2.php';</script>";
+				else echo "<script>alert('datos de cuenta nomina o correo o correo no validos');window.location='index2.php';</script>";
 			}
 
 			else {
@@ -72,7 +72,7 @@
 			
 				}
 
-				else echo "<script>alert('datos de cuenta o correo no validos');window.location='index.php';</script>";
+				else echo "<script>alert('datos de cuenta nomina o correo o correo no validos');window.location='index.php';</script>";
 
 			}
 		

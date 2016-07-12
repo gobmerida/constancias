@@ -85,7 +85,7 @@
 			}
 			largopass = formulario.usuario_user.value.length;
         	 if(largopass < 5){
-                  alert("El usuario debe ser al menos de 5 caracteres.");
+                  alert("La contraseña debe ser al menos de 5 caracteres.");
                   formulario.usuario_user.focus();
                   e.preventDefault()
          	}

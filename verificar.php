@@ -7,7 +7,7 @@
 <body>
 	<form class="form-horizontal" method="POST" action="veri.php">
   <div class="form-group">
-    <label for="verificar" class="col-sm-2 control-label">Codigo de Verificación:</label>
+    <label for="verificar" class="col-sm-2 control-label">Código de Verificación:</label>
     <div class="col-sm-8">
       <input type="text" class="form-control" name="verificar" id="verificar" placeholder="Codigo de Verificación" required autocomplete="off">
     </div><br>
