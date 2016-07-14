@@ -38,9 +38,9 @@
 		//Password to use for SMTP authentication
 		$mail->Password = "infor2014";
 		//Set who the message is to be sent from
-		$mail->setFrom('dinformarica.rrhh@gmail.com', 'Departamento de Informática de la D.E.P.P.  de Recursos Humanos del Estado Mérida');
+		$mail->setFrom('contactorrhh.gobmerida@gmail.com', 'D.E.P.P. de Recursos Humanos del Estado Mérida');
 		//Set an alternative reply-to address
-		$mail->addReplyTo('dinformarica.rrhh@gmail.com', 'Departamento de Informática de la D.E.P.P.  de Recursos Humanos del Estado Mérida');
+		$mail->addReplyTo('contactorrhh.gobmerida@gmail.com', 'D.E.P.P. de Recursos Humanos del Estado Mérida');
 		//Set who the message is to be sent to
 		$mail->addAddress($_POST["correo"], 'usuario');
 		//Set the subject line

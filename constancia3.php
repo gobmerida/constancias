@@ -78,6 +78,10 @@
 						
 
 					}
+					#tabla {
+						color: #FFF;
+				
+					}
 				</style>
 
 		<div id='constancia'>

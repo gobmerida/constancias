@@ -10,16 +10,14 @@
 	require_once 'Classes/dompdf/autoload.inc.php';
 	use Dompdf\Dompdf;
 
+	$sql="SELECT * FROM verificar_empleados WHERE cedula='".$_SESSION["cedula"]."' ORDER BY id DESC LIMIT 1";
+	$rs= mysql_query($sql) or die(mysql_error());
+	$row= mysql_fetch_array($rs);
 
+	$sql_depe ="SELECT actividad FROM c_actividades WHERE id_actividad='".$row["actividad"]."'";
+	$rs_depe = mysql_query($sql_depe) or die(mysql_error());
+	$row_depe = mysql_fetch_array($rs_depe);
 
-		
-		$ced=$_SESSION['cedula'];
-		$emp_sql = "SELECT * FROM t_empleados WHERE e_cedula='$ced'";
-		$emp_query = mysql_query($emp_sql,$con) or die (mysql_error());
-		$emp_row = mysql_fetch_array($emp_query);
-
-		
-		
 		$dia_hoy = date("d");
 		$dia_hoy_lt = numtoletras($dia_hoy);
 		
@@ -28,22 +26,19 @@
 		
 		$y=date("Y");
 		
-		
-		
-		$sueldo_integral=$emp_row['e_sueldo'];
+		$sueldo_integral=$row['sueldo'];
 		list($suel,$deci) = explode(".",$sueldo_integral);
 		$sueldo_integral_let=numtoletras($sueldo_integral);
 		$sueldo_integral_let_dec=numtoletras($deci);
 		$sueldo_integral=number_format($sueldo_integral,2,",", ".");
-		$cedula_emple = number_format($emp_row['e_cedula'], 2, ",", ".");
+		$cedula_emple = number_format($row['cedula'], 2, ",", ".");
 		list($cedula_empleado,$deci) = explode(",",$cedula_emple);
-		$fecha_de = a_fecha($emp_row['e_fechaing']);
-		$fijo_contratado=tipo_n($emp_row['e_codigo']);
-		// Aqui para cambiar la nacionalidad
+		$fecha_de = a_fecha($row['fechaing']);
+		$fijo_contratado=tipo_n($row['codigo']);
 		
-		if (isset($_POST["cesta"])) {
 
-			$cesta = 1;
+	if ($row["cesta"] == 1) {
+
 			$html= "<style>
 					body{
 					font-size:15px;
@@ -104,9 +99,9 @@
 					<center class='mas'><b>HACE CONSTAR</b></center>
 					
 					<p class='cons'>
-					Por medio de la presente que el (la) ciudadano (a) <b>$emp_row[e_nomap],</b> títular de la cédula de identidad Nº <b>V. $cedula_empleado,</b> presta
-					sus servicios como: <b>$emp_row[e_cargo] ($fijo_contratado),</b> adscrito (a): <b>$emp_row[e_dependencia],</b> devengando un
-					 sueldo mensual de: <b>$sueldo_integral_let BOLIVARES CON $sueldo_integral_let_dec CÉNTIMOS (Bs. $sueldo_integral).</b> Bajo el código: <b>$emp_row[e_codigo].</b><br>
+					Por medio de la presente que el (la) ciudadano (a) <b>$row[nomap],</b> títular de la cédula de identidad Nº <b>V. $cedula_empleado,</b> presta
+					sus servicios como: <b>$row[cargo] ($fijo_contratado),</b> adscrito (a): <b>$row_depe[actividad],</b> devengando un
+					 sueldo mensual de: <b>$sueldo_integral_let BOLIVARES CON $sueldo_integral_let_dec CÉNTIMOS (Bs. $sueldo_integral).</b> Bajo el código: <b>$row[codigo].</b><br>
 					 Adicional percibe un monto mensual de <b>SIETE MIL NOVECIENTOS SESENTA Y CINCO BOLIVARES CON CERO CÉNTIMOS (Bs. 7.965.00),</b> por concepto de Bono
 						de Alimentación, de conformidad con lo establecido en el Artículo 5 de la Ley de Alimentación Para los Trabajadores, el cual es acreditado mediante
 						tarjeta electrónica o ticket alimentación.
@@ -128,7 +123,6 @@
 					</div>";
 		}
 		else {
-			$cesta = 0;
 
 			$html= "<style>
 					body{
@@ -181,7 +175,7 @@
 					}
 				</style>
 	
-				<div id='constancia'>
+					<div id='constancia'>
 					<img src='./media/logo_emp.png' width='450px' height='80px'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<img src='./media/consumo.png' width='50px'><br><br>
 					<center class='mas'><b>CONSTANCIA</b></center>
@@ -189,19 +183,17 @@
 					<b>EL SUSCRITO DIRECTOR ESTADAL DEL PODER POPULAR DE RECURSOS
 					HUMANOS DE LA GOBERNACION DEL ESTADO BOLIVARIANO DE MÉRIDA</b></p>
 					<center class='mas'><b>HACE CONSTAR</b></center>
-					<br>
 					
 					<p class='cons'>
-					Por medio de la presente que el (la) ciudadano (a) <b>$emp_row[e_nomap],</b> títular de la cédula de identidad Nº <b>V. $cedula_empleado,</b> presta
-					sus servicios como: <b>$emp_row[e_cargo] ($fijo_contratado),</b> adscrito (a): <b>$emp_row[e_dependencia],</b> devengando un
-					 sueldo mensual de: <b>$sueldo_integral_let BOLIVARES CON $sueldo_integral_let_dec CÉNTIMOS (Bs. $sueldo_integral).</b> Bajo el código: <b>$emp_row[e_codigo].</b><br>
+					Por medio de la presente que el (la) ciudadano (a) <b>$row[nomap],</b> títular de la cédula de identidad Nº <b>V. $cedula_empleado,</b> presta
+					sus servicios como: <b>$row[cargo] ($fijo_contratado),</b> adscrito (a): <b>$row_depe[actividad],</b> devengando un
+					 sueldo mensual de: <b>$sueldo_integral_let BOLIVARES CON $sueldo_integral_let_dec CÉNTIMOS (Bs. $sueldo_integral).</b> Bajo el código: <b>$row[codigo].</b><br>
 					</p>
-					<br>
 					<center>Fecha de ingreso: <b>$fecha_de</b></center>
 					<p class='cons'>Constancia que se expide a solicitud de parte interesada para <b>FINES PERSONALES,</b> en la ciudad de Mérida a los <b>$dia_hoy_lt ($dia_hoy)</b>
 					días del mes de <b>$mes_hoy_lt</b> de <b>$y.</b></p>
-					<p><img src='img/sello1.png' alt='sello'/ class='sello'></p>
-					<br><br><br><br><br><br><br><br><br><br>
+					<table><tr><td id='tabla'>dsdsdsdsdsdsd</td><td><img src='img/sello22.png' alt='sello' class='sello'></td></tr></table>
+					<br><br><br><br><br><br>
 				
 					<p align='center' class='director'><b><br>LCDO. MIGUEL ANGEL RINCON FIGUEROA<br>DIRECTOR ESTADAL DEL PODER POPULAR<br>DE RECURSOS HUMANOS DE LA GOBERNACIÓN DEL ESTADO MÉRIDA<br>
 					Designado según decreto Nº 400-1 de fecha 11/10/2013<br>Gaceta Extraordinaria de la misma fecha</b></p>
@@ -213,20 +205,17 @@
 					</p>
 					</div>";
 		}
-		
-		$sql="INSERT INTO verificar_empleados VALUES (null, '".$emp_row['e_codigo']."', '".$emp_row['e_cedula']."', '".$emp_row['e_nomap']."', '".$emp_row['e_cargo']."', '".$emp_row['e_fechaing']."', '".$emp_row['e_actividad']."', '".$emp_row['e_sueldo']."', '".$cesta."', '".fecha1()."', '".$cadena."')";
-		$rs=mysql_query($sql) or die (mysql_error());
 
-		// instantiate and use the dompdf class
-$dompdf = new Dompdf();
-$dompdf->loadHtml($html);
+		$dompdf = new Dompdf();
+		$dompdf->loadHtml($html);
 
-// (Optional) Setup the paper size and orientation
-$dompdf->setPaper('letter');
+		// (Optional) Setup the paper size and orientation
+		$dompdf->setPaper('letter');
 
-// Render the HTML as PDF
-$dompdf->render();
+		// Render the HTML as PDF
+		$dompdf->render();
 
-// Output the generated PDF to Browser
-$dompdf->stream('constancia_empleado');
+		// Output the generated PDF to Browser
+		$dompdf->stream('ultima_constancia_empleados');
+
 ?>

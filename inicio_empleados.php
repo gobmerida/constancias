@@ -97,11 +97,11 @@ include("script_php/a_fe.php");
 						<div class="panel panel-default">
 							  		<div class="panel-heading">Constancias</div>
 							  			<div class="panel-body">
-							  			<!--<?php if ($num3 != 0) {
+							  			<?php if ($num3 != 0) {
 							  				$row3=mysql_fetch_array($rs3);
 							  				$fecha_de = a_fecha($row3["fecha_constancia"]);
-							  				echo '<a class="btn btn-success" href="">Ultima constancia Generada</a> Fecha: '.$fecha_de.'<br><br>';
-							  			} ?>-->
+							  				echo '<a class="btn btn-success" href="ultima_empleados.php">Ultima constancia Generada</a> Fecha: '.$fecha_de.'<br><br>';
+							  			} ?>
 								  			
 								  			<form action="constancia1.php" method="POST">
 								    			<button class='btn btn-primary' id="boton">Generar Constancia de Trabajo</button>
