@@ -10,12 +10,10 @@
 	require_once 'Classes/dompdf/autoload.inc.php';
 	use Dompdf\Dompdf;
 
-		$ced=$_SESSION['cedula'];
-		$jp_sql = "SELECT * FROM c_jp WHERE jp_cedula='$ced'";
-		$jp_query = mysql_query($jp_sql,$con) or die (mysql_error());
-		$jp_row = mysql_fetch_array($jp_query);
-		
-		
+	$sql="SELECT * FROM verificar_empleados WHERE cedula='".$_SESSION["cedula"]."' ORDER BY id DESC LIMIT 1";
+	$rs= mysql_query($sql) or die(mysql_error());
+	$row= mysql_fetch_array($rs);
+
 		$dia_hoy = date("d");
 		$dia_hoy_lt = numtoletras($dia_hoy);
 		
@@ -23,17 +21,16 @@
 		$mes_hoy_lt = mes($mes_hoy);
 		
 		$y=date("Y");
-		
-		
-		$sueldo_integral=$jp_row['jp_sueldo'];
+
+	$sueldo_integral=$row['sueldo'];
 		list($suel,$deci) = explode(".",$sueldo_integral);
 		$sueldo_integral_let=numtoletras($sueldo_integral);
 		$sueldo_integral_let_dec=numtoletras($deci);
 		$sueldo_integral=number_format($sueldo_integral,2,",", ".");
-		$cedula_emple = number_format($jp_row['jp_cedula'], 2, ",", ".");
+		$cedula_emple = number_format($row['cedula'], 2, ",", ".");
 		list($cedula_empleado,$deci) = explode(",",$cedula_emple);
-		// Aqui para cambiar la nacionalidad
-		$html="<style>
+
+				$html="<style>
 					body{
 					font-size:15px;
 					font-family:'Times New Roman', Georgia, Serif;
@@ -96,8 +93,8 @@
 		<center class='mas'><b>HACE CONSTAR</b></center>
 		<br>
 		<p class='cons'>
-		Por medio de la presente que el (la) ciudadano (a) <b>$jp_row[jp_nomap],</b> títular de la cédula de identidad Nº <b>V. $cedula_empleado,</b> pertenece a la 
-		nómina <b>$jp_row[jp_cargo] ($jp_row[jp_tiponom])</b> de la Gobernación del Estado Mérida, bajo el código: <b>$jp_row[jp_cod]</b> devengando una
+		Por medio de la presente que el (la) ciudadano (a) <b>$row[nomap],</b> títular de la cédula de identidad Nº <b>V. $cedula_empleado,</b> pertenece a la 
+		nómina <b>$row[cargo] ($row[actividad])</b> de la Gobernación del Estado Mérida, bajo el código: <b>$row[codigo]</b> devengando una
 		 asignación mensual de: <b>$sueldo_integral_let BOLIVARES CON $sueldo_integral_let_dec CÉNTIMOS (Bs. $sueldo_integral).</b>
 		</p>
 		<br>
@@ -115,8 +112,7 @@
 			</p>
 		</div>";
 
-		$sql="INSERT INTO verificar_empleados(id, codigo, cedula, nomap, cargo, actividad, sueldo, fecha_constancia, verificar) VALUES (null, '".$jp_row['jp_cod']."', '".$jp_row['jp_cedula']."', '".$jp_row['jp_nomap']."', '".$jp_row['jp_cargo']."', '".$jp_row['jp_tiponom']."', '".$jp_row['jp_sueldo']."', '".fecha1()."', '".$cadena."')";
-				$rs=mysql_query($sql) or die (mysql_error());
+
 				
 				// instantiate and use the dompdf class
 		$dompdf = new Dompdf();
@@ -129,5 +125,6 @@
 		$dompdf->render();
 
 		// Output the generated PDF to Browser
-		$dompdf->stream('constancia_jubilados_o_pensionados');
+		$dompdf->stream('ultima_constancia_jubilados_o_pensionados');
+
 ?>

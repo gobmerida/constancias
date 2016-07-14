@@ -49,6 +49,8 @@
 	list($suel,$deci) = explode(".",$sueldo_integral);
 	$sueldo_integral_let=numtoletras($sueldo_integral);
 	$sueldo_integral_let_dec=numtoletras($deci);
+	$cedula_emple = number_format($row["cedula"], 2, ",", ".");
+	list($cedula_empleado,$deci) = explode(",",$cedula_emple);
 	$sueldo_integral=number_format($sueldo_integral,2,",", ".");
 
 	$fecha_de = a_fecha($row["fechaing"]);
@@ -69,7 +71,7 @@
 						  <tbody>
 						  	<tr>
 							  	<td>Cédula:</td> 	
-							  	<td>'.$row["cedula"].'</td>
+							  	<td>'.$cedula_empleado.'</td>
 						  	</tr>
 						  	<tr>
 							  	<td>Nombre:</td> 	
