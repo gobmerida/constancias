@@ -14,6 +14,7 @@
 ?>
 <body>
 	<center>
+	<a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-home"></span></a><br>
 		<h3 class="n">Crear Usuarios - Jubilados o Pensionados</h3><br>
 		
 		<form class="form-horizontal" name="formulario" action="reg_jubilados.php" method="POST">

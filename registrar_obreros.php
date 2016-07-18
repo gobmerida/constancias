@@ -14,6 +14,7 @@
 ?>
 <body>
 	<center>
+	<a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-home"></span></a><br>
 		<h3 class="n">Crear Usuarios - Obreros</h3><br>
 		
 		<form class="form-horizontal" name="formulario" action="reg_obr.php" method="POST">

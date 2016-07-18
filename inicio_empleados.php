@@ -58,7 +58,7 @@ include("script_php/a_fe.php");
 		<center>
 		</center>
 		<center>
-			<a class='btn btn-info' href="cambio_clave.php">Cambiar Clave</a> <br><br>
+			<a class='btn btn-info' href="cambio_clave.php"><span class="glyphicon glyphicon-lock"></span> Cambiar Clave</a> <br><br>
 		</center>
 		<?php
 			$sql3="SELECT fecha_constancia FROM verificar_empleados WHERE cedula='".$_SESSION["cedula"]."' ORDER BY id DESC LIMIT 1";
@@ -77,11 +77,11 @@ include("script_php/a_fe.php");
 							  			<?php if ($num3 != 0) {
 							  				$row3=mysql_fetch_array($rs3);
 							  				$fecha_de = a_fecha($row3["fecha_constancia"]);
-							  				echo '<a class="btn btn-success" href="ultima_empleados.php">Ultima constancia Generada</a> Fecha: '.$fecha_de.'<br><br>';
+							  				echo '<a class="btn btn-success" href="ultima_empleados.php"><span class="glyphicon glyphicon-save"></span> Ultima constancia Generada</a> Fecha: '.$fecha_de.'<br><br>';
 							  			} ?>
 								  			
 								  			<form action="constancia1.php" method="POST">
-								    			<button class='btn btn-primary' id="boton">Generar Constancia de Trabajo</button>
+								    			<button class='btn btn-primary' id="boton"><span class="glyphicon glyphicon-save"></span> Generar Constancia de Trabajo</button>
 								    			<div class="checkbox" style="display: inline-block;">
 												    <label>
 												      <input type="checkbox" name="cesta" id="cesta" value="1"> Incluir Bono Alimentación
@@ -99,7 +99,7 @@ include("script_php/a_fe.php");
 				<div class="panel panel-default">
 					  		<div class="panel-heading">Recibos de Pago</div>
 					  			<div class="panel-body">
-					    			En Desarrollo
+					    			Próximamente
 					  			</div>
 				</div>
 			</div>

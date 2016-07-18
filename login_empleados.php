@@ -24,7 +24,7 @@
   </div>
   	<div class="form-group">
   	  <div class="col-sm-offset-2 col-sm-8">
-  	    <button type="submit" class="btn btn-success">Ingresar</button>
+  	    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-log-in"></span> Ingresar</button>
 		<a  class="btn btn-warning olvido">¿Olvido su Contraseña?</a>
   	  </div>
   	</div>

@@ -6,7 +6,9 @@
 </head>
 <body>
 	<center>
+		<a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-home"></span></a><br>
 		<h3 class="n">Recuperar Contraseña</h3><br>
+
 		
 		<form class="form-horizontal" name="formulario" action="recu_emp.php" method="POST">
 			<div class="form-group">
@@ -43,6 +45,7 @@
   	    			<button type="reset" class="btn btn-info">Limpiar</button>
   	  			</div>
   			</div>
+  	    			
 			<div id="suggestions"></div>
 		</form><br>
 		<center><span style='font-weight:bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
