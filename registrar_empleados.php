@@ -15,7 +15,7 @@
 <body>
 	<center>
 		<h3 class="n">Crear Usuarios - Empleados</h3><br>
-		<br>
+		
 		<form class="form-horizontal" name="formulario" action="reg_emp.php" method="POST">
 			<div class="form-group">
 	    		<label for="cedula" class="col-sm-4 control-label">Cédula:</label>

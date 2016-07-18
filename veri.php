@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <style>
-	.jumbotron img {
-	margin-top: -50px;
-	}
 	.verifi {
 		background: #FFF;
 	}
@@ -145,4 +142,17 @@
 			</div>';
 	}
 ?>
+<footer class="boot">
+		<br class="hidden-xs">
+		
+		<div class="container-fluid">
+			<center>
+				<b>© 2016 D.E.P.P. de Recursos Humanos del Estado Mérida.</b>
+				<br>
+				
+			</center>
+			<br class="hidden-xs">
+		</div >
+		
+	</footer>
 </body>

@@ -5,7 +5,8 @@
 	<title>Verificar Constancia</title>
 </head>
 <body>
-	<form class="form-horizontal" method="POST" action="veri.php">
+	<form class="form-horizontal" method="POST" action="veri.php" style="background: #FFF;">
+  <br><br>
   <div class="form-group">
     <label for="verificar" class="col-sm-2 control-label">Código de Verificación:</label>
     <div class="col-sm-8">
@@ -17,7 +18,7 @@
       <center>
         <button type="submit" class="btn btn-primary registrar">Verificar Constancia</button>
       </center>
-  
+  <br>
 </form>
 </body>
 </html>

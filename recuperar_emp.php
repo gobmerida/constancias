@@ -7,7 +7,7 @@
 <body>
 	<center>
 		<h3 class="n">Recuperar Contraseña</h3><br>
-		<br>
+		
 		<form class="form-horizontal" name="formulario" action="recu_emp.php" method="POST">
 			<div class="form-group">
 	    		<label for="cedula" class="col-sm-4 control-label">Cédula:</label>
