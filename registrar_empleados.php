@@ -75,22 +75,44 @@
 			var clave = formulario.clave;
 			var clave2 = formulario.clave2;
 			var validar= function validar(e) {
-			var formulario = document.formulario;
-			if (correo.value != correo2.value) {
-				alert("los correos no coinciden vuelva a introducirlos");
-				e.preventDefault()
+				var formulario = document.formulario;
+				if (correo.value != correo2.value) {
+					alert("los correos no coinciden vuelva a introducirlos");
+					e.preventDefault()
+				}
+				if (clave.value != clave2.value) {
+					alert("las contraseñas no coinciden vuelva a introducirlas");
+					e.preventDefault()
+				}
+				largopass = formulario.usuario_user.value.length;
+	        	 if(largopass < 5){
+	                  alert("La contraseña debe ser al menos de 5 caracteres.");
+	                  formulario.usuario_user.focus();
+	                  e.preventDefault()
+	         	}
+	         	$.ajax({
+	         		url: "validaciones/validate_reg_emp.php",
+	         		type: "POST",
+	         		data: $("form").serialize(),
+	         		success: function (resp) {
+	         			if(resp == 1){
+	         				alert("Cédula ya registrada en el sistema");
+	         				e.preventDefault();
+	         			}
+	         			console.log(resp);
+	         		},
+	         		error: function (jqXHR,estado,error){
+	         			alert("error");
+	         			console.log(estado);
+	         			console.log(error);
+	         		},
+	         		complete: function (jqXHR,estado){
+	         			console.log(estado);
+	         		}
+
+
+	         	})
 			}
-			if (clave.value != clave2.value) {
-				alert("las contraseñas no coinciden vuelva a introducirlas");
-				e.preventDefault()
-			}
-			largopass = formulario.usuario_user.value.length;
-        	 if(largopass < 5){
-                  alert("La contraseña debe ser al menos de 5 caracteres.");
-                  formulario.usuario_user.focus();
-                  e.preventDefault()
-         	}
-		}
 
 		formulario.addEventListener("submit", validar);
 		})();

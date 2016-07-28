@@ -94,7 +94,7 @@
 		<br>
 		<p class='cons'>
 		Por medio de la presente que el (la) ciudadano (a) <b>$row[nomap],</b> títular de la cédula de identidad Nº <b>V. $cedula_empleado,</b> pertenece a la 
-		nómina <b>$row[cargo] ($row[actividad])</b> de la Gobernación del Estado Mérida, bajo el código: <b>$row[codigo]</b> devengando una
+		nómina <b>$row[cargo]</b> de la Gobernación del Estado Mérida, bajo el código: <b>$row[codigo]</b> devengando una
 		 asignación mensual de: <b>$sueldo_integral_let BOLIVARES CON $sueldo_integral_let_dec CÉNTIMOS (Bs. $sueldo_integral).</b>
 		</p>
 		<br>
