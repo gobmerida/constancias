@@ -7,6 +7,12 @@
 		body{
 			background: #FFF;
 		}
+		.invalid {
+			border: 1px solid red;
+		}
+		.invalid:focus {
+			border: 1px solid red;
+		}
 	</style>
 </head>
 <?php
@@ -16,7 +22,7 @@
 	<center>
 		<a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-home"></span></a><br>
 		<h3 class="n">Crear Usuarios - Empleados</h3><br>
-		
+		<div class="msj"></div>
 		<form class="form-horizontal" name="formulario" action="reg_emp.php" method="POST">
 			<div class="form-group">
 	    		<label for="cedula" class="col-sm-4 control-label">Cédula:</label>
@@ -69,7 +75,129 @@
 		<center><span style='font-weight:bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 	<script>
+
+		//validacion si ya se encuentra registrado en el sistema
+
 		(function(){
+			var validate1=false;
+			var validate2 = false;
+			$("#cedula").blur(function(){
+				$.ajax({
+	         		url: "validaciones/ci_ex_1.php",
+	         		type: "POST",
+	         		data: $("#cedula").serialize(),
+	         		success: function (resp) {
+	         			if(resp == 1){
+	         				//alert("Cédula ya registrada en el sistema");
+	         				$(".msj").html('<div class="alert alert-danger" role="alert">Cédula ya registrada en el sistema</div>');
+	         				$("#cedula").addClass("invalid");
+	         				$("#cedula").focus();
+	         				
+	         				
+	         			}
+	         			else {
+	         				$(".msj").html('');
+	         				$("#cedula").removeClass("invalid");
+	         				validate1= true;
+	         				validate2= true;
+	         			}
+	         			console.log(resp);
+	         		},
+	         		error: function (jqXHR,estado,error){
+	         			alert("error");
+	         			console.log(estado);
+	         			console.log(error);
+	         		},
+	         		complete: function (jqXHR,estado){
+	         			console.log(estado);
+	         		}
+
+	         		
+	        	 })
+
+
+			})
+
+			//validacion si la cedula no se encuentra en la base de datos(no es empleado)
+			if (validate1==true) {
+				$("#cedula").blur(function(){
+					$.ajax({
+		         		url: "validaciones/ci_no_ex_1.php",
+		         		type: "POST",
+		         		data: $("#cedula").serialize(),
+		         		success: function (resp) {
+		         			if(resp != 1){
+		         				//alert("Cédula no se encuentra en la base de datos de empleados");
+		         				$(".msj").html('<div class="alert alert-danger" role="alert">Cédula no se encuentra en la base de datos de empleados</div>');
+		         				$("#cedula").addClass("invalid");
+		         				$("#cedula").focus();
+		         				
+		         				
+		         			}
+		         			else {
+		         				$(".msj").html('');
+		         				$("#cedula").removeClass("invalid");
+		         				validate2= true;
+		         				
+
+		         			}
+		         			console.log(resp);
+		         		},
+		         		error: function (jqXHR,estado,error){
+		         			alert("error");
+		         			console.log(estado);
+		         			console.log(error);
+		         		},
+		         		complete: function (jqXHR,estado){
+		         			console.log(estado);
+		         		}
+
+		         		
+		        	 })
+
+
+				})
+			}
+
+			//validacion si los datos de la cuenta no son correctos
+			if (validate2==true){
+				$("#cuenta").blur(function(){
+					$.ajax({
+		         		url: "validaciones/cuenta_no_ex_1.php",
+		         		type: "POST",
+		         		data: $(".form-horizontal").serialize(),
+		         		success: function (resp) {
+		         			if(resp == 0){
+		         				//alert("datos de cuenta nomina no validos");
+		         				$(".msj").html('<div class="alert alert-danger" role="alert">Datos de cuenta nomina no validos</div>');
+		         				$("#cuenta").addClass("invalid");
+		         				$("#cuenta").focus();
+		         				
+		         			}
+		         			else {
+		         				$(".msj").html('');
+		         				$("#cuenta").removeClass("invalid");
+		         			
+		         			}
+		         			console.log(resp);
+		         		},
+		         		error: function (jqXHR,estado,error){
+		         			alert("error");
+		         			console.log(estado);
+		         			console.log(error);
+		         		},
+		         		complete: function (jqXHR,estado){
+		         			console.log(estado);
+		         		}
+
+		         		
+		        	 })
+
+
+				})
+			}
+			
+
 			var correo = formulario.correo;
 			var correo2 = formulario.correo2;
 			var clave = formulario.clave;
@@ -90,28 +218,7 @@
 	                  formulario.usuario_user.focus();
 	                  e.preventDefault()
 	         	}
-	         	$.ajax({
-	         		url: "validaciones/validate_reg_emp.php",
-	         		type: "POST",
-	         		data: $("form").serialize(),
-	         		success: function (resp) {
-	         			if(resp == 1){
-	         				alert("Cédula ya registrada en el sistema");
-	         				e.preventDefault();
-	         			}
-	         			console.log(resp);
-	         		},
-	         		error: function (jqXHR,estado,error){
-	         			alert("error");
-	         			console.log(estado);
-	         			console.log(error);
-	         		},
-	         		complete: function (jqXHR,estado){
-	         			console.log(estado);
-	         		}
 
-
-	         	})
 			}
 
 		formulario.addEventListener("submit", validar);
