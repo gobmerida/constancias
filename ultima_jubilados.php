@@ -100,8 +100,8 @@
 		<br>
 		<p class='cons'>Constancia que se expide a solicitud de parte interesada para <b>FINES PERSONALES,</b> en la ciudad de Mérida a los <b>$dia_hoy_lt ($dia_hoy)</b>
 		días del mes de <b>$mes_hoy_lt</b> de <b>$y.</b></p>
-		<p><img src='img/sello1.png' alt='sello'/ class='sello'></p>
-		<br><br><br><br><br><br><br><br><br><br>
+		<table><tr><td id='tabla'>dsdsdsdsdsdsddsdsdsdsdsdsdsds</td><td><img src='img/sello22.png' alt='sello' class='sello'></td></tr></table>
+		<br><br><br><br><br><br><br><br><br>
 	<p align='center' class='director'><b><br>LCDO. MIGUEL ANGEL RINCON FIGUEROA<br>DIRECTOR ESTADAL DEL PODER POPULAR<br>DE RECURSOS HUMANOS DE LA GOBERNACIÓN DEL ESTADO MÉRIDA<br>
 			Designado según decreto Nº 400-1 de fecha 11/10/2013<br>Gaceta Extraordinaria de la misma fecha</b></p>
 			<p><span class='peq'>Esta constancia ha sido impresa electrónicamente, los datos reflejados están sujetos a confirmación a través de: http://rrhh.merida.gob.ve, en el módulo de Verificación de Constancias, introduciendo el siguiente código de verificación: <b>$row[verificar]</b></span>

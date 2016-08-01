@@ -78,7 +78,7 @@
 						position: absolute;
 
 						z-index: -1;
-						height:190px;
+						height:195px;
 						display:block;
 						margin: 0 auto;
 
@@ -109,8 +109,8 @@
 					<center>Fecha de ingreso: <b>$fecha_de</b></center>
 					<p class='cons'>Constancia que se expide a solicitud de parte interesada para <b>FINES PERSONALES,</b> en la ciudad de Mérida a los <b>$dia_hoy_lt ($dia_hoy)</b>
 					días del mes de <b>$mes_hoy_lt</b> de <b>$y.</b></p>
-					<table><tr><td id='tabla'>dsdsdsdsdsdsd</td><td><img src='img/sello22.png' alt='sello' class='sello'></td></tr></table>
-					<br><br><br><br><br><br>
+					<table><tr><td id='tabla'>dsdsdsdsdsdsddsdsdsdsdsdsdsds</td><td><img src='img/sello22.png' alt='sello' class='sello'></td></tr></table>
+					<br><br><br><br><br><br><br>
 				
 					<p align='center' class='director'><b><br>LCDO. MIGUEL ANGEL RINCON FIGUEROA<br>DIRECTOR ESTADAL DEL PODER POPULAR<br>DE RECURSOS HUMANOS DE LA GOBERNACIÓN DEL ESTADO MÉRIDA<br>
 					Designado según decreto Nº 400-1 de fecha 11/10/2013<br>Gaceta Extraordinaria de la misma fecha</b></p>
@@ -192,8 +192,8 @@
 					<center>Fecha de ingreso: <b>$fecha_de</b></center>
 					<p class='cons'>Constancia que se expide a solicitud de parte interesada para <b>FINES PERSONALES,</b> en la ciudad de Mérida a los <b>$dia_hoy_lt ($dia_hoy)</b>
 					días del mes de <b>$mes_hoy_lt</b> de <b>$y.</b></p>
-					<table><tr><td id='tabla'>dsdsdsdsdsdsd</td><td><img src='img/sello22.png' alt='sello' class='sello'></td></tr></table>
-					<br><br><br><br><br><br>
+					<table><tr><td id='tabla'>dsdsdsdsdsdsddsdsdsdsdsdsdsds</td><td><img src='img/sello22.png' alt='sello' class='sello'></td></tr></table>
+					<br><br><br><br><br><br><br><br><br>
 				
 					<p align='center' class='director'><b><br>LCDO. MIGUEL ANGEL RINCON FIGUEROA<br>DIRECTOR ESTADAL DEL PODER POPULAR<br>DE RECURSOS HUMANOS DE LA GOBERNACIÓN DEL ESTADO MÉRIDA<br>
 					Designado según decreto Nº 400-1 de fecha 11/10/2013<br>Gaceta Extraordinaria de la misma fecha</b></p>
