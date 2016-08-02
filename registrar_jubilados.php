@@ -16,7 +16,7 @@
 	<center>
 	<a href="index.php" class="btn btn-warning"><span class="glyphicon glyphicon-home"></span></a><br>
 		<h3 class="n">Crear Usuarios - Jubilados o Pensionados</h3><br>
-		
+		<div class="msj"></div>
 		<form class="form-horizontal" name="formulario" action="reg_jubilados.php" method="POST">
 			<div class="form-group">
 	    		<label for="cedula" class="col-sm-4 control-label">Cédula:</label>
@@ -69,7 +69,96 @@
 		<center><span style='font-weight:bold'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 	<script>
+	var validate1=false;
 		(function(){
+				$("#cedula").focus();
+			$("#cedula").blur(function(){
+				$.ajax({
+
+	         		url: "validaciones/ci_jp.php",
+	         		type: "POST",
+	         		data: $("#cedula").serialize(),
+	         		success: function (resp) {
+	         			if(resp == "ci1"){
+	         				
+	         				$("#cedula").addClass("invalid");
+	         				$("#cedula").focus();
+	         				$(".msj").html('<div class="alert alert-danger" role="alert">Cédula ya registrada en el sistema</div>');
+	         				
+	         			}
+	         			else if (resp == "ci2") {
+	         				$("#cedula").addClass("invalid");
+		         			$("#cedula").focus();
+	         				$(".msj").html('<div class="alert alert-danger" role="alert">Cédula no se encuentra en la base de datos de empleados</div>');
+
+		         				
+
+	         			}
+	         			else {
+	         				$(".msj").html('');
+	         				$("#cedula").removeClass("invalid");
+	         				validate1=true;
+
+
+	         			}
+	         			
+	         			console.log(resp);
+	         		},
+	         		error: function (jqXHR,estado,error){
+	         			alert("error");
+	         			console.log(estado);
+	         			console.log(error);
+	         		},
+	         		complete: function (jqXHR,estado){
+	         			console.log(estado);
+	         		}
+
+	         		
+	        	 })
+				
+
+			})
+
+			//validacion si los datos de la cuenta no son correctos
+			
+				$("#cuenta").blur(function(){
+					if (validate1==true){
+						$.ajax({
+			         		url: "validaciones/cuenta_jp.php",
+			         		type: "POST",
+			         		data: $(".form-horizontal").serialize(),
+			         		success: function (resp) {
+			         			if(resp == 0){
+			         				//alert("datos de cuenta nomina no validos");
+			         				$(".msj").html('<div class="alert alert-danger" role="alert">Datos de cuenta nomina no validos</div>');
+			         				$("#cuenta").addClass("invalid");
+			         				$("#cuenta").focus();
+			         				
+			         			}
+			         			else {
+			         				$(".msj").html('');
+			         				$("#cuenta").removeClass("invalid");
+			         			
+			         			}
+			         			console.log(resp);
+			         		},
+			         		error: function (jqXHR,estado,error){
+			         			alert("error");
+			         			console.log(estado);
+			         			console.log(error);
+			         		},
+			         		complete: function (jqXHR,estado){
+			         			console.log(estado);
+			         		}
+
+			         		
+			        	 })
+					}
+
+
+				})
+
+
 			var correo = formulario.correo;
 			var correo2 = formulario.correo2;
 			var clave = formulario.clave;

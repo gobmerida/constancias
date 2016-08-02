@@ -88,7 +88,6 @@ var validate1=false;
 	         		data: $("#cedula").serialize(),
 	         		success: function (resp) {
 	         			if(resp == "ci1"){
-	         				//alert("Cédula ya registrada en el sistema");
 	         				
 	         				$("#cedula").addClass("invalid");
 	         				$("#cedula").focus();
@@ -163,7 +162,7 @@ var validate1=false;
 
 			         		
 			        	 })
-				}
+					}
 
 
 				})
