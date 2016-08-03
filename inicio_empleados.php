@@ -2,6 +2,9 @@
 include("session/sesion2.php");
 include("connect/conexion.php");
 include("script_php/a_fe.php");
+include("script_php/meses.php");
+$q=date('m');
+extract($_POST);
  ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -99,7 +102,53 @@ include("script_php/a_fe.php");
 				<div class="panel panel-default">
 					  		<div class="panel-heading">Recibos de Pago</div>
 					  			<div class="panel-body">
-					    			Próximamente
+					    								  			<form action="" method="post">
+					  				<label for="">Mes</label>
+					    			<select name="q" id="" onchange = "this.form.submit()">
+					    				<option value="0">-- Seleccionar --</option>
+					    				<option value="01">Enero</option>
+					    				<option value="02">Febrero</option>
+					    				<option value="03">Marzo</option>
+					    				<option value="04">Abril</option>
+					    				<option value="05">Mayo</option>
+					    				<option value="06">Junio</option>
+					    				<option value="07">Julio</option>
+					    				<option value="08">Agosto</option>
+					    				<option value="09">Septiembre</option>
+					    				<option value="10">Octubre</option>
+					    				<option value="11">Noviembre</option>
+					    				<option value="12">Diciembre</option>
+					    			</select>
+					  			</form>
+
+					  			<h3><?php mes($q); ?></h3>
+					  			<?php 
+					  				$cod=explode('-', $row['e_codigo']);
+					  				if ($q>date('m')) {
+					  					echo '<p class="bg-danger">Aun no se han generado ricibos</p>';
+					  				}else{
+					  					if (isset($q) && $cod[0]=='CO') { ?>
+					  				 	<table class="table table-striped">
+						  				 	<tr>
+						  				 		<td>Recibo de pago</td>
+						  				 		<td><a href="recibos/recibo.php?p=<?php echo $row["e_cedula"]; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 	</tr>
+					  				 	</table>
+					  				<?php }elseif (isset($q) && $cod[0]=='EM') { ?>
+					  					<table class="table table-striped">
+						  				 	<tr>
+						  				 		<td>1ERA QUINCENA</td>
+						  				 		<td><a href="recibos/reciboEM.php?p=<?php echo $row["e_cedula"]; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 	</tr>
+						  				 	<tr>
+						  				 		<td>2DA QUINCENA</td>
+						  				 		<td><a href="reciboEM.php"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 	</tr>
+					  				 		
+					  				 	</table>
+					  				<?php } 
+					  				} ?>
+					  				
 					  			</div>
 				</div>
 			</div>
