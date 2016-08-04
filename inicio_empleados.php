@@ -102,7 +102,7 @@ extract($_POST);
 				<div class="panel panel-default">
 					  		<div class="panel-heading">Recibos de Pago</div>
 					  			<div class="panel-body">
-					    								  			<form action="" method="post">
+					    		<form action="" method="post">
 					  				<label for="">Mes</label>
 					    			<select name="q" id="" onchange = "this.form.submit()">
 					    				<option value="0">-- Seleccionar --</option>
@@ -131,18 +131,22 @@ extract($_POST);
 					  				 	<table class="table table-striped">
 						  				 	<tr>
 						  				 		<td>Recibo de pago</td>
-						  				 		<td><a href="recibos/recibo.php?p=<?php echo $row["e_cedula"]; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 		<td><a href="recibos/recibo.php?p=<?php echo $row["e_cedula"]; ?>&q=<?php echo $q; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
 						  				 	</tr>
 					  				 	</table>
 					  				<?php }elseif (isset($q) && $cod[0]=='EM') { ?>
 					  					<table class="table table-striped">
 						  				 	<tr>
 						  				 		<td>1ERA QUINCENA</td>
-						  				 		<td><a href="recibos/reciboEM.php?p=<?php echo $row["e_cedula"]; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 		<td><a href="recibos/1EM.php?p=<?php echo $row["e_cedula"]; ?>&q=<?php echo $q; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
 						  				 	</tr>
 						  				 	<tr>
+						  				 	<?php if (file_exists('recibos/pdf/'.$q.'/2EM.pdf')) { ?>
 						  				 		<td>2DA QUINCENA</td>
-						  				 		<td><a href="reciboEM.php"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 		<td><a href="recibos/2EM.php?p=<?php echo $row["e_cedula"]; ?>&q=<?php echo $q; ?>"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 	<?php }else{
+						  				 		
+						  				 		} ?>
 						  				 	</tr>
 					  				 		
 					  				 	</table>

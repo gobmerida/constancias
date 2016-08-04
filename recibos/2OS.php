@@ -10,16 +10,15 @@ require_once('FPDI-1.5.2/fpdi.php');
 require_once('../connect/conexion.php');
 
 extract($_GET);
-$query="select * from pdfCO where cedula = '$p'";
+$query="select * from pdfoOS where cedula = '$p'";
 $result = mysql_query($query);
 $row = mysql_fetch_array($result);
 
 # inicializamos el objeto
 $pdf = new FPDI();
 # definimos el archivo pdf a leer. Nos devuel el numero de paginas
-$paginas=$pdf->setSourceFile('pdf/'.$q.'/CO.pdf');
+$paginas=$pdf->setSourceFile('pdf/'.$q.'/2OS.pdf');
 $pagina=$row[0];
-
 # importamos cada una de las paginas
 $templateId=$pdf->importPage($pagina);
 # obtenemos el temaño de cada hoja

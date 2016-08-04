@@ -1,43 +1,45 @@
 <?php  
 
 	function mes($var){
-		if ($var==01){ 
-			echo "Enero";
+		switch ($var) {
+			case '01':
+				echo "Enero";
+				break;
+			case '02':
+				echo "Febrero";
+				break;
+			case '03':
+				echo "Marzo";
+				break;
+			case '04':
+				echo "Abril";
+				break;
+			case '05':
+				echo "Mayo";
+				break;
+			case '06':
+				echo "Junio";
+				break;
+			case '07':
+				echo "Julio";
+				break;
+			case '08':
+				echo "Agosto";
+				break;
+			case '09':
+				echo "Septiembre";
+				break;
+			case '10':
+				echo "Octubre";
+				break;
+			case '11':
+				echo "Noviembre";
+				break;
+			case '12':
+				echo "Diciembre";
+				break;
 		}
-		if ($var==02){ 
-			echo "Febrero";
-		}
-		if ($var==03){ 
-			echo "Marzo";
-		}
-		if ($var==04){ 
-			echo "Abril";
-		}
-		if ($var==05){ 
-			echo "Mayo";
-		}
-		if ($var==06){ 
-			echo "Junio";
-		}
-		if ($var==07){ 
-			echo "Julio";
-		}
-		if ($var==08){ 
-			echo "Agosto";
-		}
-		if ($var==09){ 
-			echo "Septiembre";
-		}
-		if ($var==10){ 
-			echo "Octubre";
-		}
-		if ($var==11){ 
-			echo "Noviembre";
-		}
-		if ($var==12){ 
-			echo "Diciembre";
-		}
-
+		
 	}
 
 
