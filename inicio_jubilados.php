@@ -2,6 +2,9 @@
 include("session/sesion4.php");
 include("connect/conexion.php");
 include("script_php/a_fe.php");
+include("script_php/meses.php");
+$q=date('m');
+extract($_POST);
  ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -88,7 +91,48 @@ include("script_php/a_fe.php");
 				<div class="panel panel-default">
 					  		<div class="panel-heading">Recibos de Pago</div>
 					  			<div class="panel-body">
-					    			Próximamente
+					    			<form action="" method="post">
+					  				<label for="">Mes</label>
+					    			<select name="q" id="" onchange = "this.form.submit()">
+					    				<option value="0">-- Seleccionar --</option>
+					    				<option value="01">Enero</option>
+					    				<option value="02">Febrero</option>
+					    				<option value="03">Marzo</option>
+					    				<option value="04">Abril</option>
+					    				<option value="05">Mayo</option>
+					    				<option value="06">Junio</option>
+					    				<option value="07">Julio</option>
+					    				<option value="08">Agosto</option>
+					    				<option value="09">Septiembre</option>
+					    				<option value="10">Octubre</option>
+					    				<option value="11">Noviembre</option>
+					    				<option value="12">Diciembre</option>
+					    			</select>
+					  			</form>
+
+					  			<h3><?php mes($q); ?></h3>
+					  			<?php 
+					  				$cod=explode('-', $row['jp_cod']);
+					  				if ($q>date('m')) {
+					  					echo '<p class="bg-danger">Aun no se han generado ricibos</p>';
+					  				}else{
+					  					if (isset($q)) { ?>
+					  				 	<form action="recibos/index.php" method="post">
+					  						<table class="table table-striped">
+						  				 	<tr>
+						  				 		<td>Recibo de pago</td>
+						  				 		<td>
+						  				 			<input type="hidden" value="<?php echo $row["jp_cedula"] ?>" name="ci">
+						  				 			<input type="hidden" value="<?php echo $q; ?>" name="mes">
+						  				 			<input type="hidden" value="<?php echo $cod[0]; ?>" name="cod">
+						  				 			<button type="submit" class='btn btn-primary' id="boton"><span class="glyphicon glyphicon-save"></span> Descargar</button>
+						  				 		</td>
+						  				 	</tr>
+					  				 	</table>
+					  					</form>
+					  				<?php } ?>
+					  					
+					  				<?php } ?>
 					  			</div>
 				</div>
 			</div>

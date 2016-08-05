@@ -129,12 +129,28 @@ extract($_POST);
 					  					<table class="table table-striped">
 						  				 	<tr>
 						  				 		<td>1ERA QUINCENA</td>
-						  				 		<td><a href="recibos/1OS.php?p=<?php echo $row["obr_cedula"]; ?>&q=<?php echo $q; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 		<td>
+						  				 			<form action="recibos/index.php" method="post">
+						  				 				<input type="hidden" value="<?php echo $row["obr_cedula"] ?>" name="ci">
+							  				 			<input type="hidden" value="<?php echo $q; ?>" name="mes">
+							  				 			<input type="hidden" value="<?php echo $cod[0]; ?>" name="cod">
+							  				 			<input type="hidden" value="1" name="per">
+							  				 			<button type="submit" class='btn btn-primary' id="boton"><span class="glyphicon glyphicon-save"></span> Descargar</button>
+						  				 			</form>
+						  				 		</td>
 						  				 	</tr>
 						  				 	<tr>
-						  				 	<?php if (file_exists('recibos/pdf/'.$q.'/2OS.pdf')) { ?>
+						  				 	<?php if (file_exists('recibos/pdf/'.$q.'/2EM.pdf')) { ?>
 						  				 		<td>2DA QUINCENA</td>
-						  				 		<td><a href="recibos/2OS.php?p=<?php echo $row["obr_cedula"]; ?>&q=<?php echo $q; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 		<td>
+						  				 			<form action="recibos/index.php" method="post">
+						  				 				<input type="hidden" value="<?php echo $row["obr_cedula"] ?>" name="ci">
+							  				 			<input type="hidden" value="<?php echo $q; ?>" name="mes">
+							  				 			<input type="hidden" value="<?php echo $cod[0]; ?>" name="cod">
+							  				 			<input type="hidden" value="2" name="per">
+							  				 			<button type="submit" class='btn btn-primary' id="boton"><span class="glyphicon glyphicon-save"></span> Descargar</button>
+						  				 			</form>
+						  				 		</td>
 						  				 	<?php }else{
 						  				 		
 						  				 		} ?>

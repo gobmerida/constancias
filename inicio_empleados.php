@@ -128,22 +128,46 @@ extract($_POST);
 					  					echo '<p class="bg-danger">Aun no se han generado ricibos</p>';
 					  				}else{
 					  					if (isset($q) && $cod[0]=='CO') { ?>
-					  				 	<table class="table table-striped">
+					  					<form action="recibos/index.php" method="post">
+					  						<table class="table table-striped">
 						  				 	<tr>
 						  				 		<td>Recibo de pago</td>
-						  				 		<td><a href="recibos/recibo.php?p=<?php echo $row["e_cedula"]; ?>&q=<?php echo $q; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 		<td>
+						  				 			<input type="hidden" value="<?php echo $row["e_cedula"] ?>" name="ci">
+						  				 			<input type="hidden" value="<?php echo $q; ?>" name="mes">
+						  				 			<input type="hidden" value="<?php echo $cod[0]; ?>" name="cod">
+						  				 			<button type="submit" class='btn btn-primary' id="boton"><span class="glyphicon glyphicon-save"></span> Descargar</button>
+						  				 		</td>
 						  				 	</tr>
 					  				 	</table>
+					  					</form>
+					  				 	
 					  				<?php }elseif (isset($q) && $cod[0]=='EM') { ?>
 					  					<table class="table table-striped">
 						  				 	<tr>
 						  				 		<td>1ERA QUINCENA</td>
-						  				 		<td><a href="recibos/1EM.php?p=<?php echo $row["e_cedula"]; ?>&q=<?php echo $q; ?>" target="_blank"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 		<td>
+						  				 			<form action="recibos/index.php" method="post">
+						  				 				<input type="hidden" value="<?php echo $row["e_cedula"] ?>" name="ci">
+							  				 			<input type="hidden" value="<?php echo $q; ?>" name="mes">
+							  				 			<input type="hidden" value="<?php echo $cod[0]; ?>" name="cod">
+							  				 			<input type="hidden" value="1" name="per">
+							  				 			<button type="submit" class='btn btn-primary' id="boton"><span class="glyphicon glyphicon-save"></span> Descargar</button>
+						  				 			</form>
+						  				 		</td>
 						  				 	</tr>
 						  				 	<tr>
 						  				 	<?php if (file_exists('recibos/pdf/'.$q.'/2EM.pdf')) { ?>
 						  				 		<td>2DA QUINCENA</td>
-						  				 		<td><a href="recibos/2EM.php?p=<?php echo $row["e_cedula"]; ?>&q=<?php echo $q; ?>"><span class="glyphicon glyphicon-save"></span></a></td>
+						  				 		<td>
+						  				 			<form action="recibos/index.php" method="post">
+						  				 				<input type="hidden" value="<?php echo $row["e_cedula"] ?>" name="ci">
+							  				 			<input type="hidden" value="<?php echo $q; ?>" name="mes">
+							  				 			<input type="hidden" value="<?php echo $cod[0]; ?>" name="cod">
+							  				 			<input type="hidden" value="2" name="per">
+							  				 			<button type="submit" class='btn btn-primary' id="boton"><span class="glyphicon glyphicon-save"></span> Descargar</button>
+						  				 			</form>
+						  				 		</td>
 						  				 	<?php }else{
 						  				 		
 						  				 		} ?>
