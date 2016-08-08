@@ -4,11 +4,6 @@
 	require_once('../connect/conexion.php');
 
 	extract($_POST);
-	//echo $ci."<br>";
-	//echo $mes."<br>";
-	//$cod."<br>";
-	//$per."<br>";
-	
 
 	if ($cod=='EM' || $cod=='OS' || $cod=='BE' || $cod=='OF' ) {
 		$archivo=$per."".$cod;
