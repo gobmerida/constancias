@@ -44,7 +44,7 @@
 
 		$pdf->Output('Rcibo.pdf','D');
 
-	}elseif ($cod=='EM') {
+	}elseif ($cod=='EM' || $cod=='CO') {
 
 		$query="select * from pdf$cod where cedula = '$ci'";
 		$result = mysql_query($query);
