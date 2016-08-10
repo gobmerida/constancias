@@ -142,7 +142,7 @@ extract($_POST);
 					  				 	</table>
 					  					</form>
 					  				 	
-					  				<?php }elseif (isset($q) && $cod[0]=='EM') { ?>
+					  				<?php }elseif (isset($q) && $cod[0]!='CO') { ?>
 					  					<table class="table table-striped">
 						  				 	<tr>
 						  				 		<td>1ERA QUINCENA</td>
